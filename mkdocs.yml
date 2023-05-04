@@ -2,8 +2,7 @@ site_name: My Docs
 
 plugins:
   - mkdocstrings
-  - multirepo: {}
 
 nav:
   - Home: index.md
-  - Code Reference: code-reference.md
+
