@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: generate a readme from src
         id: generate
-        uses: younesStrittmatter/readme-includes-action@v1a
+        uses: younesStrittmatter/readme-includes-action@v1a1
         with:
           src-file: 'README-src.md'
           out-file: 'README.md'
