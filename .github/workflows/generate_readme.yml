@@ -1,0 +1,13 @@
+on: workflow_dispatch
+
+jobs:
+  generate_readme:
+    runs-on: ubuntu-latest
+    name: gnerate a readme
+    steps:
+      - name: generate a readme from src
+        id: generate
+        uses: younesStritmatter/readme-includes-action@v1
+        with:
+          src-file: 'README-src.md'
+          out-file: 'README.md'
