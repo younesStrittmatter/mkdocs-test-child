@@ -1,10 +1,23 @@
 on: workflow_dispatch
 
 jobs:
+  list_workspace_contents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: List workspace contents
+        run: |
+          echo "Contents of the workspace:"
+          ls -la "${GITHUB_WORKSPACE}"
+
   generate_readme:
     runs-on: ubuntu-latest
-    name: gnerate a readme
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: generate a readme from src
         id: generate
         uses: younesStrittmatter/readme-includes-action@v1a3
