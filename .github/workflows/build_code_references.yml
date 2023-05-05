@@ -14,7 +14,7 @@ jobs:
         uses: younesStrittmatter/build-python-code-references-action@v1a0
         with:
           src: 'src'
-          out-file: 'docs/code_references'
+          out-file: 'docs/code_references.md'
 
       - name: Configure Git
         run: |
@@ -23,10 +23,10 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add README.md
+          git add docs/code_reference.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update README.md using generate_readme.py"
+            git commit -m "Update code_reference.md using build-code-reference.py"
             git push
           fi
