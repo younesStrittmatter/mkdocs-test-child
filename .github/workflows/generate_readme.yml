@@ -1,17 +1,6 @@
 on: workflow_dispatch
 
 jobs:
-  list_workspace_contents:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: List workspace contents
-        run: |
-          echo "Contents of the workspace:"
-          ls -la "${GITHUB_WORKSPACE}"
-
   generate_readme:
     runs-on: ubuntu-latest
     steps:
@@ -24,3 +13,14 @@ jobs:
         with:
           src-file: 'README-src.md'
           out-file: 'README.md'
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add README.md
+          git commit -m "Update README.md using generate_readme.py"
+          git push
