@@ -1,1 +1,1 @@
-hello
+<!-- include:docs/index.md -->
