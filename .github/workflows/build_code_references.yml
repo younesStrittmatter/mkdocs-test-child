@@ -1,7 +1,7 @@
 on: workflow_dispatch
 
 jobs:
-  generate_readme:
+  build_code_referemce:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -9,7 +9,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - name: generate a readme from src
+      - name: generate a code reference from src
         id: generate
         uses: younesStrittmatter/build-python-code-references-action@v1a0
         with:
