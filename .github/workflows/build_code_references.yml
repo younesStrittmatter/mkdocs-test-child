@@ -23,7 +23,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add docs/code_reference.md
+          git add docs/code_references.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
